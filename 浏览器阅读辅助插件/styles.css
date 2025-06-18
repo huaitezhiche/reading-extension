@@ -1,0 +1,60 @@
+#reading-status-bar {
+    position: fixed; /* 固定定位，不随滚动条移动 */
+    bottom: 20px;
+    left: 20px;
+    padding: 8px 15px;
+    background: rgba(0, 0, 0, 0.9); /* 加深背景，提升对比度 */
+    color: white;
+    border-radius: 4px;
+    z-index: 9999999; /* 进一步提升层级，避免被页面内容覆盖 */
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    display: flex; /* 启用弹性布局，确保按钮与文本水平排列 */
+    align-items: center; /* 垂直居中对齐 */
+    gap: 10px; /* 按钮与文本间的间距 */
+    will-change: transform; /* 关键修复：强制创建独立层 */
+}
+
+#reading-status-bar button {
+    min-width: 60px; /* 按钮最小宽度，避免文字过长时收缩 */
+    padding: 5px 10px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+#reading-status-bar button:hover {
+    opacity: 0.8;
+}
+
+#note-editor textarea {
+    resize: vertical;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#note-editor button {
+    cursor: pointer;
+    border-radius: 3px;
+    transition: opacity 0.2s;
+}
+
+#note-editor button:hover {
+    opacity: 0.8;
+}
+
+
+/* 钉图元素样式（修改后） */
+.pinned-note { 
+    transition: all 0.3s ease; 
+    cursor: grab; /* 默认显示可拖动指针 */
+} 
+
+.pinned-note:hover { 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* 悬停时阴影加深 */
+}
